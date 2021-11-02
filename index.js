@@ -182,30 +182,30 @@ HINT: Remember that the order in which we pass in our arguments matters when it 
 
 let computer = Math.floor(Math.random() * 3)
 if(computer === 0){
-  computer = "Rock";
+  computer = "rock";
 } else if(computer === 1){
-  computer = "Paper";
+  computer = "paper";
 } else {
-  computer = "Scissors";
+  computer = "scissors";
 }
 
-// console.log(computer);
+console.log(computer);
 
 function game(user, computer){
   if(user === computer){
     return "it's a tie";
-  } else if(user === "Scissors" && computer === "Paper"){
+  } else if(user === "scissors" && computer === "paper"){
     return "you win!";
-  } else if(user === "Paper" && computer === "Rock"){
+  } else if(user === "paper" && computer === "rock"){
     return "you win!";
-  } else if(user === "Rock" && computer === "Scissors"){
+  } else if(user === "rock" && computer === "scissors"){
     return "you win!";
-  } else {
+  } else{
     return "you lose!";
-  } 
+  }
 }
 
-console.log(game('Paper', computer))
+console.log(game('Rock', 'Scissors'))
 
 
 
@@ -257,7 +257,7 @@ function annoyingSong(startingNumber){
     }
 }
 
-console.log(annoyingSong(3));
+// console.log(annoyingSong(3));
 
 
 
