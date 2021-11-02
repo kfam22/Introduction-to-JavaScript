@@ -182,33 +182,27 @@ HINT: Remember that the order in which we pass in our arguments matters when it 
 
 let computer = Math.floor(Math.random() * 3)
 if(computer === 0){
-  computer = 'Rock'
+  computer = "Rock";
 } else if(computer === 1){
-  computer = 'Paper'
+  computer = "Paper";
 } else {
-  computer = 'Scissors'
+  computer = "Scissors";
 }
 
 // console.log(computer);
 
 function game(user, computer){
-  if(user === 'Paper' && computer === 'Scissors'){
-    return 'you lose!';
-  } else if(user === 'Scissors' && computer === 'Paper'){
-    return 'you win!';
-  } else if (user === 'Rock' && computer === 'Paper'){
-    return 'you lose!';
-  } else if(user === 'Paper' && computer === 'Rock'){
-    return 'you win!';
-  } else if(user === 'Scissors' && computer === 'Rock'){
-    return 'you lose!';
-  } else if(user === 'Rock' && computer === 'Scissors'){
-    return 'you win!';
-  } else if (user === computer){
+  if(user === computer){
     return "it's a tie";
+  } else if(user === "Scissors" && computer === "Paper"){
+    return "you win!";
+  } else if(user === "Paper" && computer === "Rock"){
+    return "you win!";
+  } else if(user === "Rock" && computer === "Scissors"){
+    return "you win!";
   } else {
-    return 'invalid input';
-  }
+    return "you lose!";
+  } 
 }
 
 console.log(game('Paper', computer))
@@ -228,7 +222,7 @@ Using the miles function below do the following:
 */
 
 function miles(kilometers){
-  return kilometers * 0.621;
+  return kilometers * 0.621371;
 }
 
 
@@ -242,7 +236,7 @@ Using the feet function below do the following:
 */
 
 function feet(cm){
-  return cm * 0.0328
+  return cm / 30.48;
 }
 
 
@@ -282,7 +276,18 @@ Using the grade function below do the following:
  below should return 'you got an F'
 */
 
-function grade(/*Your Code here */){
+function grade(grade){
+  if(grade >= 90){
+    return 'you got an A';
+  } else if(grade >= 80){
+    return 'you got a B';
+  } else if(grade >= 70){
+    return 'you got a C';
+  } else if(grade >= 60){
+    return 'you got a D';
+  } else{
+    return 'you got an F';
+  }
 /*Your Code here */
 }
 
