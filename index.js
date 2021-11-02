@@ -19,7 +19,11 @@ Do the following:
 
    HINT: no function required
 */
+const votingAge = 18;
 
+if (votingAge >= 18){
+  console.log(true);
+}
 
 
 /*
@@ -32,9 +36,13 @@ Do the following:
 
    HINT: no function required
 */
+let location = 'New Jersey';
+let timeOfDay = 4;
 
-
-
+if(timeOfDay < 2 || timeOfDay >3){
+  location = 'New York'
+}
+console.log(location)
 
 
 /*
@@ -48,7 +56,8 @@ Do the following:
    HINT: look up the Number method
 */
 
-
+let year = '1999'
+console.log(Number(year));
 
 
 /*
@@ -60,9 +69,13 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-  /*add your code here*/
+function multiply(a, b){
+return a * b;
 }
+
+multiply(5,95000);
+
+
 
 
 
@@ -76,9 +89,12 @@ Do the following:
  3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-  /*add your code here*/
+function dogYears(age){
+return age * 7
 }
+
+console.log(dogYears(27));
+
 
 
 
@@ -109,9 +125,37 @@ Puppies less than 1 year
 NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-  /*add your code here*/
-}
+function hungryDog(weight, age){
+  // if dog is older than 1yr and less than 5 lbs
+  if(age >= 1 && weight <= 5){
+    // feed 5% of weight
+    return weight * 0.05;
+    // if dog is older than 1yr and less than 10 lbs
+  } else if (age >= 1 && weight <= 10){
+    // feed 4% of weight
+    return weight * 0.04;
+    // if dog is older than 1yr and more than 11lbs and less than 15 lbs
+  } else if (age >= 1 && weight >= 11 && weight <= 15){
+    // feed 3% of weight
+    return weight * 0.03;
+    // if dog is older than 1yr and more than 15lbs
+  } else if (age >= 1 && weight > 15){
+    // feed 2% of weight
+    return weight * 0.02;
+    // if dog is 7mos-1yr old
+  } else if (age < 1 && age >= 0.583){
+    // feed 4% of weight
+    return weight * 0.04;
+    // if dog is 4-7 mos
+  } else if (age < 0.583 && age >= 0.333){
+    // feed 5% of weight
+    return weight * 0.05;
+    // if dog is 2-4 mos
+  } else if (age < 0.333){
+    // feed 1% of weight
+    return weight * 0.1;
+  }
+  }
 
 
 
@@ -136,9 +180,39 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
-function game(user, computer){
-  /*add your code here*/
+let computer = Math.floor(Math.random() * 3)
+if(computer === 0){
+  computer = 'Rock'
+} else if(computer === 1){
+  computer = 'Paper'
+} else {
+  computer = 'Scissors'
 }
+
+// console.log(computer);
+
+function game(user, computer){
+  if(user === 'Paper' && computer === 'Scissors'){
+    return 'you lose!';
+  } else if(user === 'Scissors' && computer === 'Paper'){
+    return 'you win!';
+  } else if (user === 'Rock' && computer === 'Paper'){
+    return 'you lose!';
+  } else if(user === 'Paper' && computer === 'Rock'){
+    return 'you win!';
+  } else if(user === 'Scissors' && computer === 'Rock'){
+    return 'you lose!';
+  } else if(user === 'Rock' && computer === 'Scissors'){
+    return 'you win!';
+  } else if (user === computer){
+    return "it's a tie";
+  } else {
+    return 'invalid input';
+  }
+}
+
+console.log(game('Paper', computer))
+
 
 
 
